@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.2 (Python 3.8.2 on win32)" generated="20200928 22:56:50.479" rpa="false">
+<suite id="s1" name="Robot" source="C:\Users\ILAY\Desktop\test task\robot.txt">
+<kw name="Go to Hotline" type="setup">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${Homepage}</arg>
+<arg>${Browser}</arg>
+</arguments>
+<msg timestamp="20200928 22:56:50.643" level="INFO">Opening browser 'chrome' to base url 'https://hotline.ua'.</msg>
+<status status="PASS" starttime="20200928 22:56:50.642" endtime="20200928 22:56:53.648"></status>
+</kw>
+<status status="PASS" starttime="20200928 22:56:50.642" endtime="20200928 22:56:53.648"></status>
+</kw>
+<test id="s1-t1" name="Ensure the first link of a request is passed">
+<kw name="Go to the first link after searching">
+<arguments>
+<arg>${Request}</arg>
+<arg>Apple iPhone 7</arg>
+</arguments>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>id=searchbox</arg>
+<arg>${query}</arg>
+</arguments>
+<msg timestamp="20200928 22:56:53.650" level="INFO">Typing text 'iPhone 7' into text field 'id=searchbox'.</msg>
+<status status="PASS" starttime="20200928 22:56:53.650" endtime="20200928 22:56:53.768"></status>
+</kw>
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>id=doSearch</arg>
+</arguments>
+<msg timestamp="20200928 22:56:53.769" level="INFO">Clicking button 'id=doSearch'.</msg>
+<status status="PASS" starttime="20200928 22:56:53.769" endtime="20200928 22:56:53.831"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://hotline.ua/sr/?q=iphone+7</arg>
+</arguments>
+<msg timestamp="20200928 22:56:53.831" level="INFO">Opening url 'https://hotline.ua/sr/?q=iphone+7'</msg>
+<status status="PASS" starttime="20200928 22:56:53.831" endtime="20200928 22:56:54.680"></status>
+</kw>
+<kw name="Go To" library="Selenium2Library">
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<arguments>
+<arg>https://hotline.ua/mobile-mobilnye-telefony-i-smartfony/apple-iphone-7-32gb-black/</arg>
+</arguments>
+<msg timestamp="20200928 22:56:54.680" level="INFO">Opening url 'https://hotline.ua/mobile-mobilnye-telefony-i-smartfony/apple-iphone-7-32gb-black/'</msg>
+<status status="PASS" starttime="20200928 22:56:54.680" endtime="20200928 22:56:55.560"></status>
+</kw>
+<status status="PASS" starttime="20200928 22:56:53.649" endtime="20200928 22:56:55.560"></status>
+</kw>
+<status status="PASS" starttime="20200928 22:56:53.648" endtime="20200928 22:56:55.560" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20200928 22:56:50.480" endtime="20200928 22:56:55.562"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="Robot">Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

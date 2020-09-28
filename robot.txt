@@ -1,0 +1,28 @@
+*** Settings ***
+Library		Selenium2Library
+Suite Setup 	Go to Hotline
+
+*** Variables ***
+${Homepage}	https://hotline.ua
+${Browser}	chrome
+${Request}	iPhone 7
+
+
+*** Test Cases ***
+Ensure the first link of a request is passed
+	Go to the first link after searching	${Request}	Apple iPhone 7
+
+*** Keywords ***
+Go to Hotline
+	Open Browser	${Homepage}	${Browser}
+
+Go to the first link after searching
+	[Arguments]	${query}	${expected_result}
+	Input Text	id=searchbox	${query}
+	Click button	id=doSearch
+	Go To	https://hotline.ua/sr/?q=iphone+7
+	Go To	https://hotline.ua/mobile-mobilnye-telefony-i-smartfony/apple-iphone-7-32gb-black/	 
+
+
+
+
